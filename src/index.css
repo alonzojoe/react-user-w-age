@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  border: none;
+  outline: none;
 }
 
 html {
@@ -8,4 +10,7 @@ html {
 
 body {
   margin: 0;
+  background: #121212;
+  display: flex;
+  justify-content: center;
 }

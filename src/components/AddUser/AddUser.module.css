@@ -1,0 +1,46 @@
+.card {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 7px;
+  width: 50vw;
+  padding: 2rem 3rem;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.input-group input {
+  background: transparent;
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  color: #13141f;
+  padding: 8px 10px;
+}
+
+.input-group input:focus {
+  border-color: #34d399;
+}
+
+.addUser {
+  background: #34d399;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  color: #f6f6f6;
+  cursor: pointer;
+}
+
+.addUser:hover {
+  background: #2fb181;
+}
