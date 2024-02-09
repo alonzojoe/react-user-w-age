@@ -1,19 +1,29 @@
 import React from "react";
 import classes from "./Modal.module.css";
 
-const Modal = () => {
+const Modal = ({ visible, message, closeModal }) => {
+  const onClose = () => {
+    closeModal(false);
+  };
+
   return (
-    <div className={classes.modal}>
-      <div className={classes["modal-body"]}>
-        <h3>Invalid Input</h3>
-        <div className={classes.content}>
-          <p>Please enter a valid age</p>
-          <div className={classes.control}>
-            <button className={classes.closeBtn}>Close</button>
+    <>
+      {visible == true && (
+        <div className={classes.modal}>
+          <div className={classes["modal-body"]}>
+            <h3>Invalid Input</h3>
+            <div className={classes.content}>
+              <p>Please enter a valid age</p>
+              <div className={classes.control}>
+                <button onClick={closeModal} className={classes.closeBtn}>
+                  Close
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
