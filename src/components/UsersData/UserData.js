@@ -12,7 +12,7 @@ const UserData = ({ users, onDelete }) => {
               <input
                 type="text"
                 value={`${user.username} (${user.age} ${
-                  user.age == 1 ? "year" : "years"
+                  user.age === 1 ? "year" : "years"
                 } of old)`}
                 readOnly
               />

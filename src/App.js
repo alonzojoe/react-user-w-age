@@ -35,7 +35,7 @@ function App() {
 
   const handleDelete = (userId) => {
     const confirmation = "Are you sure to delete this?";
-    if (window.confirm(confirmation) == true) {
+    if (window.confirm(confirmation) === true) {
       setUsers(users.filter((user) => user.id !== userId));
     }
   };

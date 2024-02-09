@@ -4,7 +4,7 @@ import classes from "./Modal.module.css";
 const Modal = ({ visible, message, onClose }) => {
   return (
     <>
-      {visible == true && (
+      {visible === true && (
         <div className={classes.modal}>
           <div className={classes["modal-body"]}>
             <h3>Invalid Input</h3>
