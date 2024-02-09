@@ -11,9 +11,11 @@ const AddUser = () => {
         </div>
         <div className={classes["input-group"]}>
           <label htmlFor="age">Age (Years)</label>
-          <input type="text" id="age" />
+          <input type="number" id="age" />
         </div>
-        <button className={classes.addUser}>Add User</button>
+        <button type="submit" className={classes.addUser}>
+          Add User
+        </button>
       </form>
     </div>
   );
