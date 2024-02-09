@@ -8,6 +8,7 @@
 
 .input-group {
   width: 100%;
+  position: relative;
 }
 
 .input-group label {
@@ -28,6 +29,11 @@
   padding: 8px 10px;
 }
 
+.input-group.invalid input {
+  border: 1.5px solid #fa4d5e;
+  animation: shake 0.2s 2;
+}
+
 .input-group input:focus {
   border-color: #34d399;
 }
@@ -43,4 +49,27 @@
 
 .addUser:hover {
   background: #2fb181;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  70% {
+    transform: translateX(-2px);
+  }
+  40%,
+  60% {
+    transform: translateX(2px);
+  }
 }

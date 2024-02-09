@@ -8,6 +8,7 @@
 
 .input-group {
   width: 100%;
+  position: relative;
 }
 
 .input-group input {
@@ -19,4 +20,21 @@
   border-radius: 0.4rem;
   color: #13141f;
   padding: 8px 10px;
+}
+
+.input-group .deleteBtn {
+  position: absolute;
+  top: 12px;
+  right: -35px;
+}
+
+.input-group .deleteBtn i {
+  color: red;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.input-group .deleteBtn i:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }

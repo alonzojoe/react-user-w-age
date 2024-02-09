@@ -1,11 +1,7 @@
 import React from "react";
 import classes from "./Modal.module.css";
 
-const Modal = ({ visible, message, closeModal }) => {
-  const onClose = () => {
-    closeModal(false);
-  };
-
+const Modal = ({ visible, message, onClose }) => {
   return (
     <>
       {visible == true && (
@@ -13,9 +9,9 @@ const Modal = ({ visible, message, closeModal }) => {
           <div className={classes["modal-body"]}>
             <h3>Invalid Input</h3>
             <div className={classes.content}>
-              <p>Please enter a valid age</p>
+              <p>{message}</p>
               <div className={classes.control}>
-                <button onClick={closeModal} className={classes.closeBtn}>
+                <button onClick={() => onClose()} className={classes.closeBtn}>
                   Close
                 </button>
               </div>

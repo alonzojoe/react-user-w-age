@@ -3,13 +3,17 @@ import AddUser from "./components/AddUser/AddUser";
 import UserData from "./components/UsersData/UserData";
 import Modal from "./components/Modal/Modal";
 
+const defaultModal = {
+  visible: false,
+  message: "",
+};
+
 function App() {
   const [users, setUsers] = useState([]);
-  const [visible, setVisible] = useState(false);
-  const message = "Please enter a valid age";
+  const [modal, setModal] = useState(defaultModal);
 
-  const handleClose = (state) => {
-    setVisible(state);
+  const handleClose = () => {
+    setModal(defaultModal);
   };
 
   const addUser = (user) => {
@@ -21,19 +25,30 @@ function App() {
     setUsers([userDetails, ...users]);
   };
 
+  const showErrors = (data) => {
+    console.log(data);
+    setModal({
+      visible: data.visible,
+      message: data.message,
+    });
+  };
+
+  const handleDelete = (userId) => {
+    const confirmation = "Are you sure to delete this?";
+    if (window.confirm(confirmation) == true) {
+      setUsers(users.filter((user) => user.id !== userId));
+    }
+  };
+
   return (
     <div>
-      <AddUser onAddUser={addUser} />
-      <UserData users={users} />
-      <Modal visible={visible} message={message} closeModal={handleClose} />
-      <button
-        style={{
-          marginTop: "5px",
-        }}
-        onClick={() => setVisible(true)}
-      >
-        Show Modal
-      </button>
+      <AddUser onAddUser={addUser} onValidate={showErrors} />
+      <UserData users={users} onDelete={handleDelete} />
+      <Modal
+        visible={modal.visible}
+        message={modal.message}
+        onClose={handleClose}
+      />
     </div>
   );
 }
